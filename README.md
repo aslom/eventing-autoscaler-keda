@@ -5,7 +5,7 @@
 
 ## Design
 To enable KEDA Autoscaling of Knative Event Sources (and other components in the future) there is a separate controller implemented, ie. no hard dependency in Knative.
-This contoller si watching for `CustomResourcesDefinitions` resources in the cluster, if there is installed a new CRD which is supported by this controller a new dynamic controller watching these resources is created. 
+This contoller is watching for `CustomResourcesDefinitions` resources in the cluster, if there is installed a new CRD which is supported by this controller a new dynamic controller watching these resources is created. 
 Currently there is support for **Kafka Source** and **AWS SQS Source**.
 
 
@@ -35,7 +35,7 @@ keda-operator-55658855fc-rc9rb            1/1     Running   0          5m3s
 
 ```bash
 export KO_DOCKER_REPO=...
-ko apply -f /config
+ko apply -f config/
 ```
 
 Confirm there is 1 pod running in `autoscaler-keda` namespace:
